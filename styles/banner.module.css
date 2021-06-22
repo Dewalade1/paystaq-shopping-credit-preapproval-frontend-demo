@@ -41,6 +41,11 @@
   align-items: center;
 }
 
+#returnLink:hover {
+  color: #073b4c;
+  text-decoration: none;
+}
+
 #returnLinkContainer {
   margin: 12% 2% 0 10%;
 }
