@@ -6,7 +6,7 @@ const Layout = ({children}) => {
         <Head>
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         </Head>
-        <main>{children}</main>
+        <main id="layout">{children}</main>
         </>)
 }
 

@@ -5,7 +5,7 @@ import styles from "../styles/banner.module.css";
 
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
-const myLoader = ({ src, width, quality }) => {
+const myLoader = ({ src }) => {
   return `https://res.cloudinary.com/hellodewa/image/upload/v1624359967/paystaq-shopping-credit-preappform-frontend-demo/images/${src}`;
 };
 
