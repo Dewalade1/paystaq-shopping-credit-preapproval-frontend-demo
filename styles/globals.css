@@ -14,3 +14,24 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/** BANNER **/
+#banner-layout {
+  display: inline-block;
+  height: 100vh;
+  width: 24.9vw;
+}
+
+/** ORDER SUMMARY **/
+#order-summary-layout {
+  display: inline-block;
+  height: 100vh;
+  width: 24.9vw;
+}
+
+/** PREAPPLICATION FORM **/
+#pre-application-form-layout {
+  display: inline-block;
+  height: 100vh;
+  width: 49vw;
+}
