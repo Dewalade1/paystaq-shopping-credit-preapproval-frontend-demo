@@ -1,8 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "../styles/banner.module.css";
 
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+
+const myLoader = ({ src, width, quality }) => {
+  return `https://res.cloudinary.com/hellodewa/image/upload/v1624359967/paystaq-shopping-credit-preappform-frontend-demo/images/${src}`;
+};
+
 
 const Banner = () => {
   return (
@@ -16,9 +22,9 @@ const Banner = () => {
             </a>
           </Link>
         </div>
-
-        <img src="https://res.cloudinary.com/hellodewa/image/upload/v1624359967/paystaq-shopping-credit-preappform-frontend-demo/images/logo-no-bkgd_wjdjof.png" alt="" id={styles.bannerLogo} />
-
+        <div id={styles.bannerLogo}>
+          <Image loader={myLoader} src="logo-no-bkgd_wjdjof.png" alt="" height={100} width={350} />
+        </div>
         <ul>
           <li>Get pre-approved instantly.</li>
           <li>Spread payment for up to six months.</li>

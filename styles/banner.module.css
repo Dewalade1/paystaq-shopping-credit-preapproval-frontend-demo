@@ -20,9 +20,9 @@
 }
 
 #bannerLogo {
-  margin: 62% 10%;
-  opacity: default;
-  width: 80%;
+  margin: 65% 10%;
+  opacity: 1;
+  /* width: 80%; */
 }
 
 #bannerOverlay{
