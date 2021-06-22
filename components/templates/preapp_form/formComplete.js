@@ -1,8 +1,8 @@
 
-const EmptyForm = () => {
+const FormComplete = () => {
     return (<>
         This is an empty form    
     </>);
 };
 
-export default EmptyForm;
+export default FormComplete;

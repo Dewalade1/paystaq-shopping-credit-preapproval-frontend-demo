@@ -19,7 +19,7 @@ const OrderSummary = () => {
         <CardContent>
           <div className={`row ${styles.cartItem}`} key={0}>
             <div className={`col-xl-3 ${styles.cartItemImage}  ${styles.blurBorders}`}>
-              <Image src={SummaryData.cartItems[0].imageUrl} loader={customLoader} layout="fill" alt="" />
+              <Image src={SummaryData.cartItems[0].imageUrl} loader={customLoader} layout="fill" alt="" className={styles.cartItemImage} />
             </div>
             <div className="col-xl-9">
               <div>{SummaryData.cartItems[0].name}</div>
@@ -29,7 +29,7 @@ const OrderSummary = () => {
           </div>
           <div className={`row ${styles.cartItem}`} key={1}>
             <div className={`col-xl-3 ${styles.cartItemImage} ${styles.blurBorders}`}>
-              <Image src={SummaryData.cartItems[1].imageUrl} loader={customLoader} layout="fill" alt=""/>
+              <Image src={SummaryData.cartItems[1].imageUrl} loader={customLoader} layout="fill" alt="" className={styles.cartItemImage} />
             </div>
             <div className="col-xl-9">
               <div>{SummaryData.cartItems[1].name}</div>

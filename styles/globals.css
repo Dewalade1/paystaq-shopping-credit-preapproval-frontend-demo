@@ -15,32 +15,76 @@ a {
   box-sizing: border-box;
 }
 
+div.row {
+  margin-left: 2px !important;
+}
+
 /** PAGE LAYOUT **/
 #layout {
   display: flex;
 }
 
-/** BANNER **/
-#banner-layout {
-  background-image: url('https://res.cloudinary.com/hellodewa/image/upload/v1624359775/paystaq-shopping-credit-preappform-frontend-demo/images/banner-bg_esiui4.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: inline-block;
-  height: 100vh;
-  width: 24.9vw;
+/** FORMS **/
+
+.form-input {
+  border: none;
+  height: 45px;
+  width: 100%; 
 }
 
-/** ORDER SUMMARY **/
-#order-summary-layout {
-  display: inline-block;
-  height: 100vh;
-  width: 24.9vw;
+.form-input-currency {
+  width: 90% !important; 
 }
 
-/** PREAPPLICATION FORM **/
-#pre-application-form-layout {
-  display: inline-block;
-  height: 100vh;
-  width: 49vw;
+.form-layout {
+  color: rgba(126,2,74,1);
+  font-size: large;
+  /* display: flex; */
+  justify-content: center;
+  padding: 3em 17%;
+
+}
+
+.first-section {
+  padding: 10px 0;
+}
+
+.form-section {
+  margin: 1em 0;
+
+}
+
+.form-section-title {
+  text-align: center;
+}
+
+.section-input-card {
+  border-radius: 19px !important;
+  height: 8em;
+}
+
+/** BUTTONS **/
+
+button.form-button {
+  border-radius: 20px !important;
+  font-weight: bold !important;
+  height: 45px !important;
+  margin-left: 32% !important;
+  margin-right: 32% !important;
+  width: 35% !important;
+}
+
+/** BORDERS **/
+.blur-borders {
+  border-radius: 4px !important;
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(131, 130, 130, 0.7) !important;
+  padding: 5px 5px 5px 5px !important;
+  width: 100%;
+}
+
+.blur-card-borders {
+  border-radius: 17px !important;
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(131, 130, 130, 0.7) !important;
+  padding: 5px 5px 5px 5px !important;
+  width: 100%;
 }
