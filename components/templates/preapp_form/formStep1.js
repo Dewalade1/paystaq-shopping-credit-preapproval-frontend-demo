@@ -1,31 +1,20 @@
 import Image from "next/image";
-import { useContext } from "react";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
 import styles from "../../../styles/formStep1.module.css";
 
-import StateContext from "../../contexts/stateContext";
-import DispatchContext from "../../contexts/dispatchContext";
 
 const customLoader = ({ src }) => {
   return `https://res.cloudinary.com/hellodewa/image/upload/v1624394998/paystaq-shopping-credit-preappform-frontend-demo/images/${src}`;
 };
 
 const FormStep1 = () => {
-  const appState = useContext(StateContext);
-  const appDispatch = useContext(DispatchContext);
-
-  const handleBtnClick = () => {
-    console.log(appState);
-    appState.formState = "SECOND";
-    console.log(appState);
-  };
 
   return (
     <div className="form-layout" id={styles.formAdjust}>
-      <h3 className="form-section-title">What Do You Do?</h3>
+      <h4 className="form-section-title">What Do You Do?</h4>
 
       <div className="row form-section first-section">
         <div className={`col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12 ${styles.employmentOption}`}>
