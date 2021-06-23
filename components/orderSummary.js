@@ -40,7 +40,7 @@ const OrderSummary = () => {
         </CardContent>
       </Card>
 
-      <Card className={`${styles.orderCard} ${styles.cardBoxShadow}`}>
+      <Card className={`${styles.orderCard} ${styles.totalCard} ${styles.cardBoxShadow}`}>
         <CardContent className="row">
           <div className="col-xl-6" id={styles.totalText}>
             Total Cart Value:

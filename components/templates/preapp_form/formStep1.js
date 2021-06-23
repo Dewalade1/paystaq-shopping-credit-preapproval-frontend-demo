@@ -1,7 +1,19 @@
 import Image from "next/image";
 
+import {useState} from "react";
+
 import Card from "@material-ui/core/Card";
+import Radio from "@material-ui/core/Radio";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from "@material-ui/core/InputLabel";
+import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
+import FormControl from "@material-ui/core/FormControl";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
+import DateRangeIcon from "@material-ui/icons/DateRange";
 
 import styles from "../../../styles/formStep1.module.css";
 
@@ -10,7 +22,27 @@ const customLoader = ({ src }) => {
   return `https://res.cloudinary.com/hellodewa/image/upload/v1624394998/paystaq-shopping-credit-preappform-frontend-demo/images/${src}`;
 };
 
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    marginLeft: theme.spacing(0),
+    minWidth: 580,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
+
 const FormStep1 = () => {
+
+  const classes = useStyles();
+  const [date, setDate] = useState("");
+
+  const handleChange = (event) => {
+    setDate(event.target.value);
+  };
+
 
   return (
     <div className="form-layout" id={styles.formAdjust}>
@@ -21,6 +53,7 @@ const FormStep1 = () => {
           <Card className="blur-card-borders section-input-card">
             <CardContent>
               <Image src="paid_employment_q1jmxa.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
+              <input type="radio" id="employment" className={styles.employmentSelect} name="employment" value="paid_employment" />
             </CardContent>
           </Card>
           <p>Paid Employment</p>
@@ -29,7 +62,7 @@ const FormStep1 = () => {
           <Card className="blur-card-borders section-input-card">
             <CardContent>
               <Image src="self_employed_freelance_qgo8lz.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
-              <input type="radio" id="self_employed_freelance" className={styles.employmentSelect} name="self_employed_freelance" value="self_employed_freelance" />
+              <input type="radio" id="employment" className={styles.employmentSelect} name="employment" value="self_employed_freelance" />
             </CardContent>
           </Card>
           <p>Self Employed/ Freelance</p>
@@ -38,7 +71,7 @@ const FormStep1 = () => {
           <Card className="blur-card-borders section-input-card">
             <CardContent>
               <Image src="corporate_organization_q1ihy9.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
-              <input type="radio" id="corporate_organization" className={styles.employmentSelect} name="corporate_organization" value="corporate_organization" />
+              <input type="radio" id="employment" className={styles.employmentSelect} name="employment" value="corporate_organization" />
             </CardContent>
           </Card>
           <p>Corporate Organization</p>
@@ -54,29 +87,43 @@ const FormStep1 = () => {
       </div>
 
       <div className="form-section">
-        <p>How much do you get paid monthly?</p>
-        <input
-          type="date"
-          className="form-input  blur-borders"
-          title="Select pay date"
-          onChange={(e) => {
-            setDownpayment(e.target.value);
-          }}
-        />
+        <p>When is your next salary date?</p>
+        <FormControl variant="outlined" className={classes.formControl}>
+          <InputLabel id="demo-simple-select-outlined-label">Select pay Date</InputLabel>
+          <Select className="form-input blur-borders" labelId="demo-simple-select-outlined-label" id="demo-simple-select-outlined" value={date} onChange={handleChange} label=""
+           startAdornment={
+            <InputAdornment position="start">
+              <DateRangeIcon />
+            </InputAdornment>}>
+            <MenuItem value="">Select pay Date</MenuItem>
+            <MenuItem value={"jan"}>January</MenuItem>
+            <MenuItem value={"feb"}>February</MenuItem>
+            <MenuItem value={"mar"}>March</MenuItem>
+            <MenuItem value={"apr"}>April</MenuItem>
+            <MenuItem value={"may"}>May</MenuItem>
+            <MenuItem value={"jun"}>June</MenuItem>
+            <MenuItem value={"jul"}>July</MenuItem>
+            <MenuItem value={"aug"}>August</MenuItem>
+            <MenuItem value={"sep"}>September</MenuItem>
+            <MenuItem value={"oct"}>October</MenuItem>
+            <MenuItem value={"nov"}>November</MenuItem>
+            <MenuItem value={"dec"}>December</MenuItem>
+          </Select>
+        </FormControl>
       </div>
 
       <div className="form-section">
         <p>Do you have any existing loan(s)?</p>
         <div className="row form-input blur-borders">
           <div className="col-xl-6  col-lg-6 col-sm-12 col-md-12 col-xs-12" id={styles.radioLeft}>
-            <input type="radio" id="yes" name="has_loan" value="yes" />
-            <label className={styles.radioLabel} htmlFor="yes">
+            <input type="radio" id="existing_loans" name="existing_loans" value="yes" />
+            <label className={styles.radioLabel} htmlFor="existing_loans">
               Yes
             </label>
           </div>
           <div className="col-xl-6  col-lg-6 col-sm-12 col-md-12 col-xs-12" id={styles.radioRight}>
-            <input type="radio" id="no" name="does_not_have_loan" value="no" />
-            <label className={styles.radioLabel} htmlFor="no" name="does_not_have_loan" value="no">
+            <input type="radio" id="existing_loans" name="existing_loans" value="no" />
+            <label className={styles.radioLabel} htmlFor="existing_loans">
               {" "}
               No
             </label>

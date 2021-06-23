@@ -49,13 +49,23 @@
 }
 
 /** TOTAL CARD **/
+
+.totalCard {
+  height: 60px !important;
+}
+
 #totalText {
+  align-items: center;
   display: flex;
   justify-content: flex-start;
+  padding: 0 !important;
 }
 
 #totalPrice {
+  align-items: center;
   display: flex;
   font-weight: bold;
   justify-content: flex-end;
+  padding: 0 20px 0 0 !important;
+  margin: 0;
 }
