@@ -122,3 +122,12 @@ button.form-button {
   padding: 5px 5px 5px 5px !important;
   width: 100%;
 }
+
+.border-left {
+  border-left: 1px solid rgba(131, 130, 130);
+  border-width: 50%;
+}
+
+.border-right {
+  border-right: 1px solid rgba(131, 130, 130);
+}

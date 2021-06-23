@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
@@ -5,6 +7,9 @@ import styles from "../../../styles/formStep2.module.css";
 
 
 const FormStep2 = () => {
+
+    const [downPayment, setDownpayment] = useState('0');
+
   return (
     <div className="form-layout">
       <div>
@@ -27,7 +32,7 @@ const FormStep2 = () => {
                 <div className={styles.planContent}>
                   <div className="small-text">Stretching</div>
                   <div className="xxx-large-text">2</div>
-                  <div className="small-text">month</div>
+                  <div className="small-text">months</div>
                 </div>
               </CardContent>
             </Card>
@@ -38,7 +43,7 @@ const FormStep2 = () => {
                 <div className={styles.planContent}>
                   <div className="small-text">Focused</div>
                   <div className="xxx-large-text">3</div>
-                  <div className="small-text">month</div>
+                  <div className="small-text">months</div>
                 </div>
               </CardContent>
             </Card>
@@ -49,7 +54,7 @@ const FormStep2 = () => {
                 <div className={styles.planContent}>
                   <div className="small-text">Casual</div>
                   <div className="xxx-large-text">4</div>
-                  <div className="small-text">month</div>
+                  <div className="small-text">months</div>
                 </div>
               </CardContent>
             </Card>
@@ -60,7 +65,7 @@ const FormStep2 = () => {
                 <div className={styles.planContent}>
                   <div className="small-text">Mild</div>
                   <div className="xxx-large-text">5</div>
-                  <div className="small-text">month</div>
+                  <div className="small-text">months</div>
                 </div>
               </CardContent>
             </Card>
@@ -71,12 +76,45 @@ const FormStep2 = () => {
                 <div className={styles.planContent}>
                   <div className="small-text">Gentle</div>
                   <div className="xxx-large-text">6</div>
-                  <div className="small-text">month</div>
+                  <div className="small-text">months</div>
                 </div>
               </CardContent>
             </Card>
           </div>
         </div>
+      </div>
+      <div id={styles.formSection}>
+        <h4 className="form-section-title">Payment Breakdown</h4>
+        <Card className={`${styles.sectionInputCard} ${styles.blurCardBorders}`} id={styles.paymentCard}>
+          <div className="row">
+            <div className="col-xl-5 col-lg-5 col-md-4">
+              <div id={styles.purposeDiv}>
+                <div> Shopping Credit </div>
+                <div> Down Payment</div>
+                <div> Monthly Installment</div>
+                <div> Tenure </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-3 col-md-4">
+              <div id={styles.amountDiv}>
+                <div>₦45,000</div>
+                <div>₦{downPayment}</div>
+                <div>₦25,000</div>
+                <div>1 month</div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-lg-4 col-md-4" id={styles.customizeDownPayment}>
+              <p id={styles.customizeDownPaymentTitle}>Customize <br/> Down Payment</p>
+              <div id={styles.customizeDownPaymentSection}>
+                <span id={styles.customizeDownPaymentCurrency}>₦</span>
+                <input type="text" id={styles.customizeDownPaymentInput} />
+              </div>
+              <button type="button" className="btn btn-outline-light" id={styles.updateBreakdownBtn} onClick={(e) => setDownpayment(e.target.value)}>
+                Update Breakdown
+              </button>
+            </div>
+          </div>
+        </Card>
       </div>
     </div>
   );

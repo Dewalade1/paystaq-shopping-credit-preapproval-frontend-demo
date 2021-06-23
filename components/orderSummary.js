@@ -21,7 +21,7 @@ const OrderSummary = () => {
             <div className={`col-xl-3 ${styles.cartItemImage}  ${styles.blurBorders}`}>
               <Image src={SummaryData.cartItems[0].imageUrl} loader={customLoader} layout="fill" alt="" className={styles.cartItemImage} />
             </div>
-            <div className="col-xl-9">
+            <div className={`col-xl-9 ${styles.cartItemInfo}`}>
               <div>{SummaryData.cartItems[0].name}</div>
               <div> ₦{SummaryData.cartItems[0].price}</div>
               <div>Qty: {SummaryData.cartItems[0].qty}</div>
@@ -31,7 +31,7 @@ const OrderSummary = () => {
             <div className={`col-xl-3 ${styles.cartItemImage} ${styles.blurBorders}`}>
               <Image src={SummaryData.cartItems[1].imageUrl} loader={customLoader} layout="fill" alt="" className={styles.cartItemImage} />
             </div>
-            <div className="col-xl-9">
+            <div className={`col-xl-9 ${styles.cartItemInfo}`}>
               <div>{SummaryData.cartItems[1].name}</div>
               <div> ₦{SummaryData.cartItems[1].price}</div>
               <div>Qty: {SummaryData.cartItems[1].qty}</div>

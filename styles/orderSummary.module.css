@@ -13,7 +13,8 @@
 
 .orderCard {
   border-radius: 19px !important;
-  padding: 5px 10px;
+  padding: 2px 6px;
+  max-height: 250px;
   margin-top: .8em;
 }
 
@@ -35,11 +36,16 @@
 
 .cartItem {
   height: 6em;
-  padding: 0.3em;
+  padding: 0.6em 0;
 }
 
 .cartItemImage{
   border-radius: 5px !important;
+  padding-right: 3px;
+}
+
+.cartItemInfo {
+  padding-left: 15px;
 }
 
 /** TOTAL CARD **/

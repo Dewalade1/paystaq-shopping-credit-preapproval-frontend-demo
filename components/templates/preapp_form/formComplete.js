@@ -1,7 +1,7 @@
 
 const FormComplete = () => {
     return (<>
-        This is an empty form    
+        Thank you! Your application has been submitted   
     </>);
 };
 

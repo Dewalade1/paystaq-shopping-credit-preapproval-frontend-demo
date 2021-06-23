@@ -55,7 +55,14 @@ const FormStep1 = () => {
 
       <div className="form-section">
         <p>How much do you get paid monthly?</p>
-        <input type="date" className="form-input  blur-borders" title="Select pay date" />
+        <input
+          type="date"
+          className="form-input  blur-borders"
+          title="Select pay date"
+          onChange={(e) => {
+            setDownpayment(e.target.value);
+          }}
+        />
       </div>
 
       <div className="form-section">

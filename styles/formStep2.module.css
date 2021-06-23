@@ -1,4 +1,13 @@
 
+#formSection {
+    padding-top: 4.8em;
+}
+
+#paymentCard {
+    margin-top: 2em !important;
+    padding: 0 !important;
+}
+
 .planContent {
     border-radius: 10px;
     margin: 1px 1px;
@@ -10,11 +19,34 @@
 }
 
 .sectionInputCard {
-    border-radius: 10px;
+    border-radius: 10px !important; 
     color: rgba(126,2,74,1);
-    height: 5em !important;
     text-align: center;
     width: 99% !important;
+}
+
+/** PAYMENT BREAKDOWN **/
+
+#amountDiv {
+    border-left: 1px solid rgba(131, 130, 130);
+    color: rgba(126,2,74);
+    font-weight: bold;
+    margin: 1.5em 2em 1.5em 0;
+    padding-left: 1.5em;
+    text-align: left;
+}
+
+#customizeDownPayment {
+    background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
+    border-radius: 10px;
+    color: white;
+}
+
+#purposeDiv {
+    border-right: 1px solid rgba(131, 130, 130);
+    color: rgba(126,2,74);
+    margin: 1.5em 0 1.5em 1em;
+    text-align: left;
 }
 
 /** BORDERS **/
@@ -24,7 +56,7 @@
 }
 
 .blurCardBorders {
-  /* -webkit-box-shadow: 0px 0px 6px 6px rgba(131, 130, 130, 0.7) !important; */
+  -webkit-box-shadow: 0px 0px 6px 6px rgba(131, 130, 130, 0.7) !important;
   padding: 5px 5px 5px 5px !important;
 }
 
@@ -46,4 +78,45 @@
 
 #redBorderTop {
     border-top: solid 10px rgb(255, 0, 0)
+}
+
+/** DOWN PAYMENT SECTION **/
+
+#customizeDownPaymentInput {
+    height: 24px;
+    width: 50%;
+}
+
+#customizeDownPaymentCurrency {
+    background-color: white !important;
+    color: rgba(126,2,74,1);
+    font-size: 25px;
+    line-height: 24px;
+    padding: 0 10px;
+}
+
+#customizeDownPaymentSection {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 20%;
+}
+
+#customizeDownPaymentTitle {
+    font-size: small;
+    margin: 5% 0 3% 10%;
+    width: 75%;
+}
+
+#updateBreakdownBtn {
+    border-radius: 35px;
+    font-size: small;
+    height: 30px;
+    text-align: center;
+}
+
+#updateBreakdownBtn:hover {
+    border-color: rgba(126,2,74,1);
+    color: rgba(126,2,74,1);
+    font-weight: bold;
 }
