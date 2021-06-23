@@ -8,7 +8,7 @@ import styles from "../../../styles/formStep2.module.css";
 
 const FormStep2 = () => {
 
-    const [downPayment, setDownpayment] = useState('0');
+  const [downPayment, setDownPayment] = useState('0');
 
   return (
     <div className="form-layout">
@@ -83,6 +83,7 @@ const FormStep2 = () => {
           </div>
         </div>
       </div>
+      
       <div id={styles.formSection}>
         <h4 className="form-section-title">Payment Breakdown</h4>
         <Card className={`${styles.sectionInputCard} ${styles.blurCardBorders}`} id={styles.paymentCard}>
@@ -104,12 +105,14 @@ const FormStep2 = () => {
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4" id={styles.customizeDownPayment}>
-              <p id={styles.customizeDownPaymentTitle}>Customize <br/> Down Payment</p>
+              <p id={styles.customizeDownPaymentTitle}>
+                Customize <br /> Down Payment
+              </p>
               <div id={styles.customizeDownPaymentSection}>
                 <span id={styles.customizeDownPaymentCurrency}>₦</span>
-                <input type="text" id={styles.customizeDownPaymentInput} />
+                <input type="text" id={styles.customizeDownPaymentInput} onChange={(e) => setDownPayment(e.target.value)} />
               </div>
-              <button type="button" className="btn btn-outline-light" id={styles.updateBreakdownBtn} onClick={(e) => setDownpayment(e.target.value)}>
+              <button type="button" className="btn btn-outline-light" id={styles.updateBreakdownBtn} onClick={(e) => setDownPayment(e.target.value)}>
                 Update Breakdown
               </button>
             </div>
