@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+#formAdjust {
+    margin-top: 5.5vw !important;
+}
+
 /** CARDS **/
 
 .employmentOption {
@@ -21,7 +25,11 @@
     font-weight: bold;
 }
 
-.employmentOption > employmentSelect:focus {
+.employmentSelect {
+    display: none;
+}
+
+.employmentSelect:checked + label > div {
     font-weight: bold;
 }
 

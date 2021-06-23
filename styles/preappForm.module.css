@@ -8,16 +8,32 @@
 }
 
 .formHeader {
-  font-size: large;
-  padding: 3em 25% !important;
+	display: flex !important;
+  	font-size: large;
+	height: 30px !important;
+  	padding: 0em 25% !important;
+}
+
+#returnLink {
+	color: rgba(126,2,74,1);
+	margin-top: 5%;
+	padding: 1em;
+	width: 20%;
+}
+
+#returnLink:hover {
+	color: rgba(243,1,78,1);
+	text-decoration: none;
 }
 
 /** PROGRESS BAR **/
 
 #progressbar {
 	overflow: hidden;
-  margin: 11% 22% 0 22%;
-  width: 50%;
+  	position: absolute;
+	right: 10%;
+	top: 7vh;
+  	width: 30%;
 	/*CSS counters to number the steps*/
 	counter-reset: step;
 }
@@ -38,7 +54,7 @@
 	width: 30px;
 	line-height: 30px;
 	display: block;
-	font-size: 15px;
+	font-size: 18px;
   text-align: center;
 	color: #ffffff;
 	background: rgba(168, 167, 167, 0.7);
@@ -49,12 +65,12 @@
 /*progressbar connectors*/
 #progressbar li:after {
 	content: '';
-	width: 100%;
-	height: 4px;
+	width: 80%;
+	height: 5px;
 	background: rgba(168, 167, 167, 0.7);
 	position: absolute;
-	left: -50%;
-	top: 9px;
+	left: -40%;
+	top: 13px;
 	z-index: -1; /*put it behind the numbers*/
 }
 #progressbar li:first-child:after {

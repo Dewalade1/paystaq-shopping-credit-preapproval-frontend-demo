@@ -24,7 +24,7 @@ const FormStep1 = () => {
   };
 
   return (
-    <div className="form-layout">
+    <div className="form-layout" id={styles.formAdjust}>
       <h3 className="form-section-title">What Do You Do?</h3>
 
       <div className="row form-section first-section">
@@ -32,7 +32,6 @@ const FormStep1 = () => {
           <Card className="blur-card-borders section-input-card">
             <CardContent>
               <Image src="paid_employment_q1jmxa.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
-              <input type="radio" id="paid_employment" className={styles.employmentSelect} name="paid_employment" value="paid_employment" />
             </CardContent>
           </Card>
           <p>Paid Employment</p>

@@ -19,8 +19,6 @@ const PreappForm = () => {
   const appDispatch = useContext(DispatchContext);
 
   const handleBtnClick = () => {
-    console.log(appState);
-    // appState.formState = "SECOND";
     if (appState.formState === "FIRST") {
       appDispatch({ type: "MOVE_TO_FORM_STEP_2" });
     } else if (appState.formState === "SECOND") {
@@ -28,7 +26,16 @@ const PreappForm = () => {
     } else {
       appDispatch({ type: "" });
     }
-    console.log(appState);
+  };
+
+  const handleBackLinkClick = () => {
+    if (appState.formState === "SECOND") {
+      appDispatch({ type: "MOVE_TO_FORM_STEP_1" });
+    } else if (appState.formState === "COMPLETE") {
+      appDispatch({ type: "MOVE_TO_FORM_STEP_2" });
+    } else {
+      appDispatch({ type: "" });
+    }
   };
 
   useEffect(() => {
@@ -124,15 +131,14 @@ const PreappForm = () => {
   return (
     <div id={styles.preApplicationFormLayout}>
       <div id={styles.formHeader}>
-        {appState.formState !== "FIRST" && appState.formState !== "COMPLETE" ? (
-          <Link
-            href="#"
-            onClick={() => {
-              appDispatch({ type: "MOVE_TO_FORM_STEP_1" });
-            }}
-          >
-            <a>Back</a>
-          </Link>
+        {appState.formState !== "FIRST" ? (
+          <div id={styles.returnLink}>
+            <Link href="#">
+              <a onClick={handleBackLinkClick}>
+                <ArrowBackIcon /> Back
+              </a>
+            </Link>
+          </div>
         ) : (
           ""
         )}
@@ -144,10 +150,16 @@ const PreappForm = () => {
         </ul>
       </div>
       <div>
-        {appState.formState == "FIRST" ? <FormStep1 /> : appState.formState == "SECOND" ? <FormStep2 /> : <FormComplete />}
-        <button type="button" className="btn btn-outline-danger form-button" onClick={handleBtnClick}>
-          Continue
-        </button>
+        {appState.formState === "FIRST" ? <FormStep1 /> : appState.formState == "SECOND" ? <FormStep2 /> : <FormComplete />}
+        <div>
+          {appState.formState !== "COMPLETE" ? (
+            <button type="button" className="btn btn-outline-danger form-button" onClick={handleBtnClick}>
+              Continue
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );
