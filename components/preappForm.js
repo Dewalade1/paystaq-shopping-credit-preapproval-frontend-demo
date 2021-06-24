@@ -23,14 +23,41 @@ const PreappForm = () => {
   const appDispatch = useContext(DispatchContext);
 
   const [state, setState] = useImmer({
-    isLoading: true,
+    isLoading: false,
   });
 
   const handleBtnClick = () => {
     if (appState.formState === "FIRST") {
       appDispatch({ type: "MOVE_TO_FORM_STEP_2" });
+      
     } else if (appState.formState === "SECOND") {
-      appDispatch({ type: "MOVE_TO_FORM_COMPLETE" });
+      setState(draft => {
+        draft.isLoading = true;
+      });
+
+      const cancelSubmitRequest = Axios.CancelToken.source();
+      async function submitRequest(e) {
+        e.preventDefault();
+
+      try {
+        const response = await Axios.post("/login", { username, password });
+        if (response.data) {
+          setState(draft => {
+            draft.isLoading = false;
+          });
+          console.log(response.data)
+        }
+      } catch (e) {
+        setState(draft => {
+          draft.isLoading = false;
+        });
+          console.log(e)
+          return <NetworkError />;
+      }
+        submitRequest();
+        appDispatch({ type: "MOVE_TO_FORM_COMPLETE" });
+        return () => cancelSubmitRequest.cancel();
+      }
     } else {
       appDispatch({ type: "" });
     }
@@ -45,29 +72,6 @@ const PreappForm = () => {
       appDispatch({ type: "" });
     }
   };
-
-  useEffect(() => {
-    const submitRequest = Axios.CancelToken.source();
-    const submitApplication = async function () {
-    try {
-      const response = await Axios.post("/getHomeFeed", {token: appState.user.token, cancelToken: submitRequest.token });
-      setState(draft => {
-        draft.isLoading = false;
-        draft.feed = response.data;
-      });
-    } catch (e) {
-      if (e != "Cancel") {
-        setState(draft => {
-          draft.isLoading = false;
-        });
-        appDispatch({ type: "flashMessage", value: ["alert-danger", `Sorry, Could not fetch your feed`] });
-        return <NetworkError />;
-        }
-      }
-    };
-    submitApplication();
-    return () => submitRequest.cancel();
-  }, []);
 
   return (
     <>
