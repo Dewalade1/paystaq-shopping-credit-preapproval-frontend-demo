@@ -49,32 +49,46 @@ const FormStep1 = () => {
       <h4 className="form-section-title">What Do You Do?</h4>
 
       <div className="row form-section first-section">
-        <div className={`col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12 ${styles.employmentOption}`}>
+        <div className="col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12">
+        <input type="checkbox" id={styles.paidEmpBtnControl}   name="employment" value="paid_employement"/>
+        <label class="btn" for={styles.paidEmpBtnControl}>
+        <div className={styles.employmentOption}>
           <Card className="blur-card-borders section-input-card">
             <CardContent>
-              <Image src="paid_employment_q1jmxa.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
-              <input type="radio" id="employment" className={styles.employmentSelect} name="employment" value="paid_employment" />
+              <Image src="paid_employment_q1jmxa.jpg" loader={customLoader} layout="responsive" width={500} height={500} alt="" />
             </CardContent>
           </Card>
           <p>Paid Employment</p>
+          </div>
+          </label>
         </div>
-        <div className={`col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12 ${styles.employmentOption}`}>
-          <Card className="blur-card-borders section-input-card">
-            <CardContent>
-              <Image src="self_employed_freelance_qgo8lz.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
-              <input type="radio" id="employment" className={styles.employmentSelect} name="employment" value="self_employed_freelance" />
-            </CardContent>
-          </Card>
-          <p>Self Employed/ Freelance</p>
+        <div className="col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12">
+        <input type="checkbox" id={styles.selfEmpBtnControl}  name="employment" value="self_employed_freelance"/>
+        <label class="btn" for={styles.selfEmpBtnControl}>
+          <div className={styles.employmentOption}>
+            <Card className="blur-card-borders section-input-card">
+              <CardContent>
+                <Image src="self_employed_freelance_qgo8lz.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
+                <input type="radio" id="employment" className={styles.employmentSelect} />
+              </CardContent>
+            </Card>
+            <p>Self Employed/ Freelance</p>
+            </div>
+          </label>
         </div>
-        <div className={`col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12 ${styles.employmentOption}`}>
-          <Card className="blur-card-borders section-input-card">
-            <CardContent>
-              <Image src="corporate_organization_q1ihy9.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
-              <input type="radio" id="employment" className={styles.employmentSelect} name="employment" value="corporate_organization" />
-            </CardContent>
-          </Card>
-          <p>Corporate Organization</p>
+        <div className="col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12">
+          <input type="checkbox" id={styles.corpEmpBtnControl}  name="employment" value="self_employed_freelance"/>
+          <label class="btn" for={styles.corpEmpBtnControl}>
+            <div className={styles.employmentOption}>
+              <Card className="blur-card-borders section-input-card">
+                <CardContent>
+                  <Image src="corporate_organization_q1ihy9.jpg" loader={customLoader} layout="responsive" width={400} height={400} alt="" />
+                  <input type="radio" id="employment" className={styles.employmentSelect} name="employment" value="corporate_organization" />
+                </CardContent>
+              </Card>
+              <p>Corporate Organization</p>
+            </div>
+          </label>
         </div>
       </div>
 
@@ -89,7 +103,7 @@ const FormStep1 = () => {
       <div className="form-section">
         <p>When is your next salary date?</p>
         <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel id="demo-simple-select-outlined-label">Select pay Date</InputLabel>
+          <InputLabel id="demo-simple-select-outlined-label"></InputLabel>
           <Select className="form-input blur-borders" labelId="demo-simple-select-outlined-label" id="demo-simple-select-outlined" value={date} onChange={handleChange} label=""
            startAdornment={
             <InputAdornment position="start">

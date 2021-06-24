@@ -11,6 +11,7 @@
 
 .planContent {
     border-radius: 10px;
+    color: rgba(126,2,74,1);
     margin: 1px 1px;
 }
 
@@ -24,6 +25,60 @@
     color: rgba(126,2,74,1);
     text-align: center;
     width: 99% !important;
+}
+
+#aggressive {
+    display: none;
+}
+
+#aggressive:checked + label > div {
+    background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
+    color: white;
+}
+
+#stretching {
+    display: none;
+}
+
+#stretching:checked + label > div {
+    background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
+    color: white;
+}
+
+#focused {
+    display: none;
+}
+
+#focused:checked + label > div {
+    background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
+    color: white;
+}
+
+#casual {
+    display: none;
+}
+
+#casual:checked + label > div {
+    background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
+    color: white;
+}
+
+#mild {
+    display: none;
+}
+
+#mild:checked + label > div {
+    background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
+    color: white;
+}
+
+#gentle {
+    display: none;
+}
+
+#gentle:checked + label > div {
+    background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
+    color: white;
 }
 
 /** PAYMENT BREAKDOWN **/

@@ -1,4 +1,5 @@
-import React from "react";
+import Axios from "axios";
+import {useEffect} from "react";
 import {useImmerReducer} from "use-immer";
 
 import StateContext from '../contexts/stateContext';
@@ -9,11 +10,23 @@ import Layout from "../layouts/layout";
 import PreappForm from "../preappForm";
 import OrderSummary from "../orderSummary";
 
+Axios.defaults.baseURL = "http://localhost:8080" || process.env.BACKENDURL;
+
+
 const MainTemplate = () => {
 
   const initState = {
     formState: 'FIRST',
-    formData: '',
+    formData: {
+      employmentStatus: '',
+      salary: 0,
+      nextSalaryDate: '',
+      existingLoans: '',
+      shoppingCredit: 0,
+      downPayment: 0,
+      monthlyInstallment: 0,
+      tenure: 0
+      },
   };
 
   function theReducer(draft, action) {

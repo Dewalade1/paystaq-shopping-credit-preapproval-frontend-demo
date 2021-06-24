@@ -18,6 +18,7 @@
 /** CARDS **/
 
 .employmentOption {
+    color: rgba(126,2,74,1);
     padding: 0 15px;
     text-align: center;
 }
@@ -31,6 +32,32 @@
 }
 
 .employmentSelect:checked + label > div {
+    font-weight: bold;
+}
+
+/** CARD SELECT INPUTS **/
+
+#paidEmpBtnControl {
+    display: none;
+}
+
+#paidEmpBtnControl:checked + label > div {
+    font-weight: bold;
+}
+
+#selfEmpBtnControl {
+    display: none;
+}
+
+#selfEmpBtnControl:checked + label > div {
+    font-weight: bold;
+}
+
+#corpEmpBtnControl {
+    display: none;
+}
+
+#corpEmpBtnControl:checked + label > div {
     font-weight: bold;
 }
 

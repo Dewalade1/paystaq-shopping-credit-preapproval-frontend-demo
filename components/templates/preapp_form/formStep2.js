@@ -16,68 +16,88 @@ const FormStep2 = () => {
         <h4 className="form-section-title">Choose your Plan</h4>
         <div className="row form-section first-section">
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
-            <Card>
-              <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.redBorderTop}>
-                <div className={styles.planContent}>
-                  <div className="small-text">Aggressive</div>
-                  <div className="xxx-large-text">1</div>
-                  <div className="small-text">month</div>
-                </div>
-              </CardContent>
-            </Card>
+                <Card>
+                  <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.redBorderTop}>
+                    <input type="checkbox" id={styles.aggressive}   name="employment" value="paid_employement"/>
+                    <label class="btn" for={styles.aggressive}>
+                      <div className={styles.planContent}>
+                        <div className="small-text">Aggressive</div>
+                        <div className="xxx-large-text">1</div>
+                        <div className="small-text">month</div>
+                      </div>
+                    </label>
+                  </CardContent>
+                </Card>
           </div>
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <Card>
               <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.pinkBorderTop}>
-                <div className={styles.planContent}>
-                  <div className="small-text">Stretching</div>
-                  <div className="xxx-large-text">2</div>
-                  <div className="small-text">months</div>
-                </div>
+              <input type="checkbox" id={styles.stretching}   name="employment" value="paid_employement"/>
+                <label class="btn" for={styles.stretching}>
+                  <div className={styles.planContent}>
+                    <div className="small-text">Stretching</div>
+                    <div className="xxx-large-text">2</div>
+                    <div className="small-text">months</div>
+                  </div>
+                </label>
               </CardContent>
             </Card>
           </div>
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <Card>
               <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.purpleBorderTop}>
-                <div className={styles.planContent}>
-                  <div className="small-text">Focused</div>
-                  <div className="xxx-large-text">3</div>
-                  <div className="small-text">months</div>
-                </div>
+              <input type="checkbox" id={styles.focused}   name="employment" value="paid_employement"/>
+                <label class="btn" for={styles.focused}>
+                  <div className={styles.planContent}>
+                    <div className="small-text">Focused</div>
+                    <div className="xxx-large-text">3</div>
+                    <div className="small-text">months</div>
+                  </div>
+                </label>
               </CardContent>
             </Card>
           </div>
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <Card>
               <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.blueGreenBorderTop}>
+              <input type="checkbox" id={styles.casual}   name="employment" value="paid_employement"/>
+              <label class="btn" for={styles.casual}>
                 <div className={styles.planContent}>
                   <div className="small-text">Casual</div>
                   <div className="xxx-large-text">4</div>
                   <div className="small-text">months</div>
                 </div>
+              </label>
               </CardContent>
             </Card>
           </div>
+
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
-            <Card>
-              <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.orangeBorderTop}>
-                <div className={styles.planContent}>
-                  <div className="small-text">Mild</div>
-                  <div className="xxx-large-text">5</div>
-                  <div className="small-text">months</div>
-                </div>
+              <Card>
+                <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.orangeBorderTop}>
+                <input type="checkbox" id={styles.mild}   name="employment" value="paid_employement"/>
+                <label class="btn" for={styles.mild}>
+                  <div className={styles.planContent}>
+                    <div className="small-text">Mild</div>
+                    <div className="xxx-large-text">5</div>
+                    <div className="small-text">months</div>
+                  </div>
+                </label>
               </CardContent>
             </Card>
           </div>
+
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <Card>
               <CardContent className={`${styles.blurCardBorders} ${styles.sectionInputCard} `} id={styles.brightGreenBorderTop}>
-                <div className={styles.planContent}>
-                  <div className="small-text">Gentle</div>
-                  <div className="xxx-large-text">6</div>
-                  <div className="small-text">months</div>
-                </div>
+              <input type="checkbox" id={styles.gentle}   name="employment" value="paid_employement"/>
+                <label class="btn" for={styles.gentle}>
+                  <div className={styles.planContent}>
+                    <div className="small-text">Gentle</div>
+                    <div className="xxx-large-text">6</div>
+                    <div className="small-text">months</div>
+                  </div>
+                </label>
               </CardContent>
             </Card>
           </div>

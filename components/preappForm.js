@@ -1,9 +1,10 @@
+import $ from "jquery";
+import Axios from "axios";
 import Link from "next/link";
 import Script from "next/script";
+import {useImmer} from "use-immer";
 
 import { useContext, useEffect } from "react";
-
-import $ from "jquery";
 
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
@@ -12,6 +13,7 @@ import styles from "../styles/preappForm.module.css";
 import StateContext from "./contexts/stateContext";
 import DispatchContext from "./contexts/dispatchContext";
 
+import NetworkError from "./app/netWorkError";
 import FormComplete from "./templates/preapp_form/formComplete";
 import FormStep1 from "./templates/preapp_form/formStep1";
 import FormStep2 from "./templates/preapp_form/formStep2";
@@ -19,6 +21,10 @@ import FormStep2 from "./templates/preapp_form/formStep2";
 const PreappForm = () => {
   const appState = useContext(StateContext);
   const appDispatch = useContext(DispatchContext);
+
+  const [state, setState] = useImmer({
+    isLoading: true,
+  });
 
   const handleBtnClick = () => {
     if (appState.formState === "FIRST") {
@@ -39,6 +45,29 @@ const PreappForm = () => {
       appDispatch({ type: "" });
     }
   };
+
+  useEffect(() => {
+    const submitRequest = Axios.CancelToken.source();
+    const submitApplication = async function () {
+    try {
+      const response = await Axios.post("/getHomeFeed", {token: appState.user.token, cancelToken: submitRequest.token });
+      setState(draft => {
+        draft.isLoading = false;
+        draft.feed = response.data;
+      });
+    } catch (e) {
+      if (e != "Cancel") {
+        setState(draft => {
+          draft.isLoading = false;
+        });
+        appDispatch({ type: "flashMessage", value: ["alert-danger", `Sorry, Could not fetch your feed`] });
+        return <NetworkError />;
+        }
+      }
+    };
+    submitApplication();
+    return () => submitRequest.cancel();
+  }, []);
 
   return (
     <>
