@@ -13,17 +13,18 @@ import styles from "../styles/preappForm.module.css";
 import StateContext from "./contexts/stateContext";
 import DispatchContext from "./contexts/dispatchContext";
 
-import NetworkError from "./app/netWorkError";
-import FormComplete from "./templates/preapp_form/formComplete";
+// import NetworkError from "./app/netWorkError";
+import LoadingIcon from "./app/loadingIcon";
 import FormStep1 from "./templates/preapp_form/formStep1";
 import FormStep2 from "./templates/preapp_form/formStep2";
+import FormComplete from "./templates/preapp_form/formComplete";
 
 const PreappForm = () => {
   const appState = useContext(StateContext);
   const appDispatch = useContext(DispatchContext);
 
   const [state, setState] = useImmer({
-    isLoading: false,
+    isLoading: true,
   });
 
   const handleBtnClick = () => {
@@ -37,27 +38,33 @@ const PreappForm = () => {
 
       const cancelSubmitRequest = Axios.CancelToken.source();
       async function submitRequest(e) {
-        e.preventDefault();
 
       try {
-        const response = await Axios.post("/login", { username, password });
+        const response = await Axios.post("/shopping-credits/apply", { appState });
         if (response.data) {
+
           setState(draft => {
             draft.isLoading = false;
           });
-          console.log(response.data)
+          appDispatch({ type: "MOVE_TO_FORM_COMPLETE" });
+          if (response.data.success === true ){
+            appDispatch({ type: "MOVE_TO_FORM_COMPLETE" });
+          } else {
+            // display a flash message and input errors on page
+            appDispatch({ type: "MOVE_TO_FORM_STEM 2" });
+          }
         }
       } catch (e) {
         setState(draft => {
           draft.isLoading = false;
         });
           console.log(e)
-          return <NetworkError />;
+          // return <NetworkError />;
+      }  
       }
-        submitRequest();
-        appDispatch({ type: "MOVE_TO_FORM_COMPLETE" });
-        return () => cancelSubmitRequest.cancel();
-      }
+      submitRequest();
+      return () => cancelSubmitRequest.cancel();
+
     } else {
       appDispatch({ type: "" });
     }
@@ -96,7 +103,15 @@ const PreappForm = () => {
         </ul>
       </div>
       <div>
-        {appState.formState === "FIRST" ? <FormStep1 /> : appState.formState == "SECOND" ? <FormStep2 /> : <FormComplete />}
+        {appState.formState === "FIRST" ? 
+          <FormStep1 /> 
+          : appState.formState === "SECOND" ? 
+          <FormStep2 /> 
+          : appState.formState === "COMPLETE" ? 
+          <FormComplete /> 
+          : <LoadingIcon />
+        }
+
         <div>
           {appState.formState !== "COMPLETE" ? (
             <button type="button" className="btn btn-outline-danger form-button" onClick={handleBtnClick}>

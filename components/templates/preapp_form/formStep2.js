@@ -18,7 +18,7 @@ const FormStep2 = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <button className={`btn btn-outline-light ${styles.blurCardBorders} ${styles.sectionInputCard}`}id={styles.redBorderTop} > 
               <input type="checkbox" id={styles.aggressive} name="employment" value="paid_employement"/>
-              <label className="btn card-btn" for={styles.aggressive}>
+              <label className="btn card-btn" htmlFor={styles.aggressive}>
                 <div className={styles.planContent}>
                   <div className="small-text">Aggressive</div>
                   <div className="xxx-large-text">1</div>
@@ -30,7 +30,7 @@ const FormStep2 = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <button className={`btn btn-outline-light ${styles.blurCardBorders} ${styles.sectionInputCard}`}id={styles.pinkBorderTop} > 
               <input type="checkbox" id={styles.stretching} name="employment" value="paid_employement"/>
-              <label className="btn card-btn" for={styles.stretching}>
+              <label className="btn card-btn" htmlFor={styles.stretching}>
                 <div className={styles.planContent}>
                   <div className="small-text">Stretching</div>
                   <div className="xxx-large-text">2</div>
@@ -42,7 +42,7 @@ const FormStep2 = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <button className={`btn btn-outline-light ${styles.blurCardBorders} ${styles.sectionInputCard}`}id={styles.purpleBorderTop} > 
               <input type="checkbox" id={styles.focused} name="employment" value="paid_employement"/>
-              <label className="btn card-btn" for={styles.focused}>
+              <label className="btn card-btn" htmlFor={styles.focused}>
                 <div className={styles.planContent}>
                   <div className="small-text">Focused</div>
                   <div className="xxx-large-text">3</div>
@@ -54,7 +54,7 @@ const FormStep2 = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <button className={`btn btn-outline-light ${styles.blurCardBorders} ${styles.sectionInputCard}`}id={styles.blueGreenBorderTop} > 
               <input type="checkbox" id={styles.casual} name="employment" value="paid_employement"/>
-              <label className="btn card-btn" for={styles.casual}>
+              <label className="btn card-btn" htmlFor={styles.casual}>
                 <div className={styles.planContent}>
                   <div className="small-text">Casual</div>
                   <div className="xxx-large-text">4</div>
@@ -67,7 +67,7 @@ const FormStep2 = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <button className={`btn btn-outline-light ${styles.blurCardBorders} ${styles.sectionInputCard}`}id={styles.orangeBorderTop} > 
               <input type="checkbox" id={styles.mild} name="employment" value="paid_employement"/>
-              <label className="btn card-btn" for={styles.mild}>
+              <label className="btn card-btn" htmlFor={styles.mild}>
                 <div className={styles.planContent}>
                   <div className="small-text">Mild</div>
                   <div className="xxx-large-text">5</div>
@@ -80,7 +80,7 @@ const FormStep2 = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-md-4 col-xs-2 card-container">
             <button className={`btn btn-outline-light ${styles.blurCardBorders} ${styles.sectionInputCard}`}id={styles.brightGreenBorderTop} > 
             <input type="checkbox" id={styles.gentle} name="employment" value="paid_employement"/>
-              <label className="btn card-btn" for={styles.gentle}>
+              <label className="btn card-btn" htmlFor={styles.gentle}>
                 <div className={styles.planContent}>
                   <div className="small-text">Gentle</div>
                   <div className="xxx-large-text">6</div>

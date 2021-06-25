@@ -51,7 +51,7 @@ const FormStep1 = () => {
       <div className="row form-section first-section"> 
         <div className="col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12">
         <input type="checkbox" id={styles.paidEmpBtnControl}   name="employment" value="paid_employement"/>
-        <label class="btn" for={styles.paidEmpBtnControl}>
+        <label className="btn" htmlFor={styles.paidEmpBtnControl}>
         <div className={styles.employmentOption}>
           <Card className="blur-card-borders section-input-card">
             <CardContent>
@@ -64,7 +64,7 @@ const FormStep1 = () => {
         </div>
         <div className="col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12">
         <input type="checkbox" id={styles.selfEmpBtnControl}  name="employment" value="self_employed_freelance"/>
-        <label class="btn" for={styles.selfEmpBtnControl}>
+        <label className="btn" htmlFor={styles.selfEmpBtnControl}>
           <div className={styles.employmentOption}>
             <Card className="blur-card-borders section-input-card">
               <CardContent>
@@ -78,7 +78,7 @@ const FormStep1 = () => {
         </div>
         <div className="col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12">
           <input type="checkbox" id={styles.corpEmpBtnControl}  name="employment" value="self_employed_freelance"/>
-          <label class="btn" for={styles.corpEmpBtnControl}>
+          <label className="btn" htmlFor={styles.corpEmpBtnControl}>
             <div className={styles.employmentOption}>
               <Card className="blur-card-borders section-input-card">
                 <CardContent>

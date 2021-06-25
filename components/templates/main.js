@@ -26,7 +26,7 @@ const MainTemplate = () => {
       downPayment: 0,
       monthlyInstallment: 0,
       tenure: 0
-      },
+    },
   };
 
   function theReducer(draft, action) {
