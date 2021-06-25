@@ -47,7 +47,6 @@ div.row {
 
 .xxx-large-text {
   font-size: xxx-large;
-  font-weight: thick;
   line-height: 1em !important;
 }
 
@@ -111,6 +110,11 @@ button.form-button {
   margin-left: 32% !important;
   margin-right: 32% !important;
   width: 35% !important;
+}
+
+label.card-btn {
+  padding: 0 !important;
+  width: 95% !important;
 }
 
 /** BORDERS **/

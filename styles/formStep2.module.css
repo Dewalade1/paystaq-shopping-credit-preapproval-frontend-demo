@@ -12,19 +12,28 @@
 .planContent {
     border-radius: 10px;
     color: rgba(126,2,74,1);
+    height: 100%;
     margin: 1px 1px;
+    width: 100%;
 }
 
 .planContent:hover {
     background: linear-gradient(45deg, rgba(126,2,74,1) 0%, rgba(243,1,78,1) 100%);
     color: white;
+    width: 95%;
 }
 
 .sectionInputCard {
+    border: 0 #ffff;
     border-radius: 10px !important; 
     color: rgba(126,2,74,1);
     text-align: center;
     width: 99% !important;
+}
+
+.sectionInputCard:hover {
+    border: 0 #ffff;
+    background-color: #ffff;
 }
 
 #aggressive {

@@ -48,7 +48,7 @@ const FormStep1 = () => {
     <div className="form-layout" id={styles.formAdjust}>
       <h4 className="form-section-title">What Do You Do?</h4>
 
-      <div className="row form-section first-section">
+      <div className="row form-section first-section"> 
         <div className="col-xl-4 col-lg-4 col-sm-12 col-md-12 col-xs-12">
         <input type="checkbox" id={styles.paidEmpBtnControl}   name="employment" value="paid_employement"/>
         <label class="btn" for={styles.paidEmpBtnControl}>
